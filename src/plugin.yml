@@ -1,0 +1,9 @@
+name: MCEmojis
+version: 1.0
+api-version: 1.17
+main: me.weisboys.mcemojis.MCEmojis
+commands:
+    emojis:
+        description: lists available emojis
+        usage: /<command>
+        permission: mcemojis.emojiscommand
