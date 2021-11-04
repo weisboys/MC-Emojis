@@ -1,2 +1,2 @@
 # MC Emojis
-Adds small emojis for players to use.
+Adds small emojis for players to use in chat.
