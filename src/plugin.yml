@@ -7,3 +7,29 @@ commands:
         description: lists available emojis
         usage: /<command>
         permission: mcemojis.emojiscommand
+    mcereload:
+        description: reloads plugin
+        usage: /<command>
+        permission: mcemojis.reload
+    emojispam:
+        description: spams your wonderful face with ALL the emojis EVER
+        usage: /<command>
+        permission: mcemojis.spam
+    searchemojis:
+        description: allows users to search for a specifc emoji
+        usage: /<command>
+        permission: mcemojis.search
+        
+permissions:
+    mcemojis.emojiscommand: 
+        description: the permission to use /emojis
+        default: true
+    mcemojis.reloadcommand: 
+        description: the permission to use /mcereload
+        default: op
+    mcemojis.spam:
+        description: the permission to spam your wonderful face with ALL the emojis EVER
+        default: true
+    mcemojis.search:
+        description: the permission to search for a specifc emoji
+        default: true    
