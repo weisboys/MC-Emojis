@@ -14,6 +14,12 @@ Emojis:
     thumbsup: "\ue8bb"    
     thumbsdown: "\ue8bc"
     tounge: "\ue8bd"
+    wide_confused: "\ue8be"
+    cry: "\ue8bf"
+    dead: "\ue8c0"
+    evil_smirk: "\ue8c1"
+    evil_tounge: "\ue8c2"
+    salute: "\ue8c3"
     #database emojis
 #    tank: "\u3a00"
 #    mcqueen: "\u3a03"
@@ -34,6 +40,12 @@ BareEmojis:
     "+1": "\ue8bb"
     "-1": "\ue8bc"
     ":P": "\ue8bd"
+    "O_o": "\ue8be"
+    "T_T": "\ue8bf"
+    "X_X": "\ue8c0"
+    ">:)": "\ue8c1"
+    ">:P": "\ue8c2"
+    "07": "\ue8c3"
 HiddenEmojis:
     #Minecraft Textures
     air_blank: "\ue000"
