@@ -40,7 +40,7 @@ public class SearchCommand implements CommandExecutor {
         }
         
         if (output == true) {
-            sender.sendMessage("Couldn't find any matching emojis.");
+            sender.sendMessage(ChatColor.RED + "Couldn't find any matching emojis.");
         }
         return true;
        
