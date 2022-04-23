@@ -45,7 +45,7 @@ BareEmojis:
     "X_X": "\ue8c0"
     ">:)": "\ue8c1"
     ">:P": "\ue8c2"
-    "07": "\ue8c3"
+    "o7": "\ue8c3"
 HiddenEmojis:
     #Minecraft Textures
     air_blank: "\ue000"

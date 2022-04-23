@@ -19,6 +19,10 @@ commands:
         description: allows users to search for a specifc emoji
         usage: /<command>
         permission: mcemojis.search
+    emojishelp:
+        description: shows help and command list
+        usage: /<command>
+        permission: mcemojis.emojishelp
         
 permissions:
     mcemojis.emojiscommand: 
@@ -33,3 +37,6 @@ permissions:
     mcemojis.search:
         description: the permission to search for a specifc emoji
         default: true    
+    mcemojis.emojishelp:
+        description: the permission to show help and command list
+        default: true       

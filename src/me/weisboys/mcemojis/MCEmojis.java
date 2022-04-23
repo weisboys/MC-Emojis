@@ -22,6 +22,7 @@ public class MCEmojis extends JavaPlugin implements Listener {
         getCommand("emojis").setExecutor(new EmojisCommand(this));
         getCommand("emojispam").setExecutor(new SpamCommand(this));
         getCommand("searchemojis").setExecutor(new SearchCommand(this));
+        getCommand("emojishelp").setExecutor(new HelpCommand(this));
     }
     @EventHandler
     public void onChat (AsyncPlayerChatEvent event){
