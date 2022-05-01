@@ -3,33 +3,17 @@ version: 1.0
 api-version: 1.17
 main: me.weisboys.mcemojis.MCEmojis
 commands:
-    emojis:
-        description: lists available emojis
-        usage: /<command>
+    mcemojis:
+        description: main command for mcemojis
+        usage: /<command> [subcommand] ...
         permission: mcemojis.emojiscommand
-    mcereload:
-        description: reloads plugin
-        usage: /<command>
-        permission: mcemojis.reload
-    emojispam:
-        description: spams your wonderful face with ALL the emojis EVER
-        usage: /<command>
-        permission: mcemojis.spam
-    searchemojis:
-        description: allows users to search for a specifc emoji
-        usage: /<command>
-        permission: mcemojis.search
-    emojishelp:
-        description: shows help and command list
-        usage: /<command>
-        permission: mcemojis.emojishelp
         
 permissions:
-    mcemojis.emojiscommand: 
-        description: the permission to use /emojis
+    mcemojis.list: 
+        description: the permission to list available emojis
         default: true
-    mcemojis.reloadcommand: 
-        description: the permission to use /mcereload
+    mcemojis.reload: 
+        description: the permission to reload the mcemojis plugin
         default: op
     mcemojis.spam:
         description: the permission to spam your wonderful face with ALL the emojis EVER
@@ -37,6 +21,6 @@ permissions:
     mcemojis.search:
         description: the permission to search for a specifc emoji
         default: true    
-    mcemojis.emojishelp:
+    mcemojis.help:
         description: the permission to show help and command list
         default: true       

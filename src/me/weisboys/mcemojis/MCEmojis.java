@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import me.weisboys.mcemojis.commands.CommandManager;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -18,11 +16,7 @@ public class MCEmojis extends JavaPlugin implements Listener {
     public void onEnable (){
         Bukkit.getPluginManager().registerEvents(this, this);
         saveDefaultConfig();
-        getCommand("mcereload").setExecutor(new ReloadCommand(this));
-        getCommand("emojis").setExecutor(new EmojisCommand(this));
-        getCommand("emojispam").setExecutor(new SpamCommand(this));
-        getCommand("searchemojis").setExecutor(new SearchCommand(this));
-        getCommand("emojishelp").setExecutor(new HelpCommand(this));
+        getCommand("mcemojis").setExecutor(new CommandManager(this));
     }
     @EventHandler
     public void onChat (AsyncPlayerChatEvent event){
@@ -43,17 +37,4 @@ public class MCEmojis extends JavaPlugin implements Listener {
         event.setMessage(playerInput);
     }
     
-    public boolean onCommand​(CommandSender sender, Command command, String label, String[] args){
-        
-        sender.sendMessage(ChatColor.GOLD.toString() + ChatColor.BOLD + "Available Emojis:");
-        for (String key : this.getConfig().getConfigurationSection("Emojis").getKeys(false)) {
-            sender.sendMessage( this.getConfig().getString("Emojis." + key) + ChatColor.YELLOW + ":" + key +":" );
-        }
-        for (String key : this.getConfig().getConfigurationSection("BareEmojis").getKeys(false)) {
-            sender.sendMessage( this.getConfig().getString("BareEmojis." + key) + ChatColor.YELLOW + key );
-        }
-        sender.sendMessage(ChatColor.GOLD.toString() + "You can also type the name of a block, item, or entity incased in \":\"s.");
-        
-        return true;
-    }
 }

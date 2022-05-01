@@ -1,10 +1,11 @@
-package me.weisboys.mcemojis;
+package me.weisboys.mcemojis.commands;
 
+import me.weisboys.mcemojis.MCEmojis;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class SpamCommand implements CommandExecutor {
+public class SpamCommand implements EmojiCommand {
     private MCEmojis emojis;
     
     public SpamCommand(MCEmojis emojis) {
@@ -12,7 +13,7 @@ public class SpamCommand implements CommandExecutor {
     }
      
     @Override
-    public boolean onCommand​(CommandSender sender, Command command, String label, String[] args){
+    public boolean onCommand​(CommandSender sender, String[] args){
         StringBuilder spam = new StringBuilder();
         section("Emojis", spam);
         section("BareEmojis", spam);
@@ -21,9 +22,23 @@ public class SpamCommand implements CommandExecutor {
         return true;   
     }
     private void section(String section, StringBuilder sb){
+        
+        //to-do: Add click-able chat/hover events
+        int i = 0;
+        
         for (String key : emojis.getConfig().getConfigurationSection(section).getKeys(false)) {
             sb.append(emojis.getConfig().getString(section + "." + key));
         }
+    }
+
+    @Override
+    public String getName() {
+        return "spam";
+    }
+
+    @Override
+    public String getUsage() {
+        return "";
     }
         
 }

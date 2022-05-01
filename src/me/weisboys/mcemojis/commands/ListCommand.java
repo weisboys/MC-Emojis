@@ -1,20 +1,21 @@
-package me.weisboys.mcemojis;
+package me.weisboys.mcemojis.commands;
 
+import me.weisboys.mcemojis.MCEmojis;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class EmojisCommand implements CommandExecutor {
+public class ListCommand implements EmojiCommand {
     
     private MCEmojis emojis;
     
-    public EmojisCommand(MCEmojis emojis) {
+    public ListCommand(MCEmojis emojis) {
         this.emojis = emojis;
     }
     
     @Override
-    public boolean onCommand​(CommandSender sender, Command command, String label, String[] args){
+    public boolean onCommand​(CommandSender sender, String[] args){
         
         sender.sendMessage(ChatColor.GOLD.toString() + ChatColor.BOLD + "Available Emojis:");
         for (String key : emojis.getConfig().getConfigurationSection("Emojis").getKeys(false)) {
@@ -27,4 +28,15 @@ public class EmojisCommand implements CommandExecutor {
         
         return true;
     }
+
+    @Override
+    public String getName() {
+        return "list";
+    }
+
+    @Override
+    public String getUsage() {
+       return ""; 
+    }
+
 }

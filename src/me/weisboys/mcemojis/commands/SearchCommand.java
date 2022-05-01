@@ -1,11 +1,12 @@
-package me.weisboys.mcemojis;
+package me.weisboys.mcemojis.commands;
 
+import me.weisboys.mcemojis.MCEmojis;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class SearchCommand implements CommandExecutor {
+public class SearchCommand implements EmojiCommand {
     
     private MCEmojis emojis;
     
@@ -14,7 +15,7 @@ public class SearchCommand implements CommandExecutor {
     }
     
     @Override
-    public boolean onCommand​(CommandSender sender, Command command, String label, String[] args){
+    public boolean onCommand​(CommandSender sender, String[] args){
         
         if (args.length != 1) {
             return false;
@@ -35,6 +36,16 @@ public class SearchCommand implements CommandExecutor {
         }
         return true;
        
+    }
+
+    @Override
+    public String getName() {
+        return "search";
+    }
+
+    @Override
+    public String getUsage() {
+        return "<emojiName>";
     }
     
 }
