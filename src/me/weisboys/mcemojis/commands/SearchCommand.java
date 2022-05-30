@@ -24,15 +24,20 @@ public class SearchCommand implements EmojiCommand {
         
         String input = args[0].toLowerCase();
         boolean output = true;
+        int results = 0;
         for (String emojiName : emojis.getConfig().getKeys(true)) {
             if (!emojis.getConfig().isString(emojiName)) continue;
             if (!emojiName.toLowerCase().contains(input)) continue;
+             results ++;    
              sender.sendMessage(ChatColor.YELLOW + emojiName.split("\\.")[1] + ChatColor.RESET + emojis.getConfig().getString(emojiName));
              output = false;
         }
         
         if (output == true) {
             sender.sendMessage(ChatColor.RED + "Couldn't find any matching emojis.");
+        }
+        if (output == false){
+            sender.sendMessage(ChatColor.YELLOW + "Found " + ChatColor.GREEN + results + ChatColor.YELLOW + " matching emojis.");
         }
         return true;
        
