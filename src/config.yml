@@ -36,6 +36,7 @@ Emojis:
 #    ooh: "\u3a01"
 #    puppet: "\u3a02"
 BareEmojis:
+    #bare emojis
     ":)": "\ue8b0"
     ":D": "\ue8b1"
     "XD": "\ue8b2"
@@ -45,12 +46,14 @@ BareEmojis:
     "O_O": "\ue8b6"
     ":/": "\ue8b7"
     ":|": "\ue8b8"
+    ":I": "\ue8b8"
     "D:": "\ue8b9"
     ">:(": "\ue8ba"
     "+1": "\ue8bb"
     "-1": "\ue8bc"
     ":P": "\ue8bd"
     "O_o": "\ue8be"
+    "o_O": "\ue8be"
     "T_T": "\ue8bf"
     "X_X": "\ue8c0"
     ">:)": "\ue8c1"
@@ -64,7 +67,7 @@ BareEmojis:
     "}:|": "\ue8c9"
     "(//・_・//)": "\ue8ca"
 HiddenEmojis:
-    #Minecraft Textures
+    #minecraft textures
     air_blank: "\ue000"
     stone: "\ue001"
     granite: "\ue002"
