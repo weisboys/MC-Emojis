@@ -37,7 +37,7 @@ public class SearchCommand implements EmojiCommand {
             sender.sendMessage(ChatColor.RED + "Couldn't find any matching emojis.");
         }
         if (output == false){
-            sender.sendMessage(ChatColor.YELLOW + "Found " + ChatColor.GREEN + results + ChatColor.YELLOW + " matching emojis.");
+            sender.sendMessage(ChatColor.GOLD + "Found " + ChatColor.GREEN + results + ChatColor.GOLD + " matching emojis.");
         }
         return true;
        

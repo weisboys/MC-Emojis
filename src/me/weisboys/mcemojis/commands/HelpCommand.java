@@ -23,8 +23,8 @@ public class HelpCommand implements EmojiCommand {
         sender.sendMessage(ChatColor.GOLD.toString() + ChatColor.BOLD + "MCEmojis:");
         sender.sendMessage(ChatColor.GOLD + "Commands");
         for (EmojiCommand command : manager.getCommands()){
-            // Yellow + /mcemojis [subcommand] &a [usage]   
-            sender.sendMessage(ChatColor.YELLOW + baseCommand + " " + command.getName() + ChatColor.GREEN + " "  + command.getUsage());
+            // Yellow + /mcemojis &2[subcommand] &a [usage]   
+            sender.sendMessage(ChatColor.YELLOW + baseCommand + " " + ChatColor.DARK_GREEN + command.getName() + ChatColor.GREEN + " "  + command.getUsage());
         }
       
         
