@@ -19,10 +19,10 @@ public class ListCommand implements EmojiCommand {
         
         sender.sendMessage(ChatColor.GOLD.toString() + ChatColor.BOLD + "Available Emojis:");
         for (String key : emojis.getConfig().getConfigurationSection("Emojis").getKeys(false)) {
-            sender.sendMessage( emojis.getConfig().getString("Emojis." + key) + ChatColor.YELLOW + ":" + key +":" );
+            sendEmoji("Emojis." + key, sender, emojis, false);
         }
         for (String key : emojis.getConfig().getConfigurationSection("BareEmojis").getKeys(false)) {
-            sender.sendMessage( emojis.getConfig().getString("BareEmojis." + key) + ChatColor.YELLOW + key );
+            sendEmoji("BareEmojis." + key, sender, emojis, true);
         }
         sender.sendMessage(ChatColor.GOLD.toString() + "You can also type the name of a block, item, or entity incased in \":\"s.");
         

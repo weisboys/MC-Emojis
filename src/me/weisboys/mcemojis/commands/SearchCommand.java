@@ -1,7 +1,9 @@
 package me.weisboys.mcemojis.commands;
 
 import me.weisboys.mcemojis.MCEmojis;
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,11 +27,11 @@ public class SearchCommand implements EmojiCommand {
         String input = args[0].toLowerCase();
         boolean output = true;
         int results = 0;
-        for (String emojiName : emojis.getConfig().getKeys(true)) {
-            if (!emojis.getConfig().isString(emojiName)) continue;
-            if (!emojiName.toLowerCase().contains(input)) continue;
-             results ++;    
-             sender.sendMessage(ChatColor.YELLOW + emojiName.split("\\.")[1] + ChatColor.RESET + emojis.getConfig().getString(emojiName));
+        for (String emojiPath : emojis.getConfig().getKeys(true)) {
+            if (!emojis.getConfig().isString(emojiPath)) continue;
+            if (!emojiPath.toLowerCase().contains(input)) continue;
+             results ++;
+             sendEmoji(emojiPath, sender, emojis, emojiPath.startsWith("BareEmojis"));
              output = false;
         }
         
