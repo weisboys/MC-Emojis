@@ -24,6 +24,7 @@ public class CommandManager implements TabExecutor {
         commands.add(new ReloadCommand(emojis));
         commands.add(new SearchCommand(emojis));
         commands.add(new SpamCommand(emojis));
+        commands.add(new FavoritesCommand(emojis));
     }
     
     

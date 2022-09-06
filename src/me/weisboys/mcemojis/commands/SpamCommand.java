@@ -23,7 +23,6 @@ public class SpamCommand implements EmojiCommand {
     }
     private void section(String section, StringBuilder sb){
         
-        //to-do: Add click-able chat/hover events
         int i = 0;
         
         for (String key : emojis.getConfig().getConfigurationSection(section).getKeys(false)) {

@@ -23,4 +23,7 @@ permissions:
         default: true    
     mcemojis.help:
         description: the permission to show help and command list
-        default: true       
+        default: true
+    mcemojis.favorites:
+        description: the permission to view and add to the favorites list
+        default: true    
