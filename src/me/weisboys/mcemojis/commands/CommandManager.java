@@ -16,6 +16,7 @@ public class CommandManager implements TabExecutor {
    
     private MCEmojis emojis;
     private List<EmojiCommand> commands = new ArrayList<>();
+    private final String baseCommand;
     
     public CommandManager(MCEmojis emojis) {
         this.emojis = emojis;
@@ -25,6 +26,8 @@ public class CommandManager implements TabExecutor {
         commands.add(new SearchCommand(emojis));
         commands.add(new SpamCommand(emojis));
         commands.add(new FavoritesCommand(emojis));
+        
+        baseCommand = "/" + emojis.getDescription().getCommands().keySet().iterator().next(); //this copied from HelpCommand, probably a better way to do this
     }
     
     
@@ -45,7 +48,7 @@ public class CommandManager implements TabExecutor {
                 
             }
         }
-        sender.sendMessage("Not a valid command!"); //todo: add chat formatting
+        sender.sendMessage(ChatColor.YELLOW + "Not a valid command! " + ChatColor.DARK_GREEN + baseCommand + " help" + ChatColor.YELLOW + " for the list of valid emoji commands");
         
         return true;
     }
